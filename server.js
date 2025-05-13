@@ -1,9 +1,16 @@
 const express = require('express');
+const cors = require('cors');
+
 const { exec } = require('child_process');
 
 const app = express();
 // Run on port 3001 so React can run on 3000.
 const port = 3001;
+
+// Allow requests from React app.
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 
 app.get('/top', (req, res) => {
     // Run the 'top' command a single time and parse the output.
