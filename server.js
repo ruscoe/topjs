@@ -52,5 +52,5 @@ app.get('/top', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`topjs server running at http://localhost:${port}/top`);
+    console.log(`topjs server running at http://localhost:${port}`);
 });
