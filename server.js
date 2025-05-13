@@ -18,7 +18,7 @@ app.get('/top', (req, res) => {
         const memory = {};
         if (memLine) {
             memLine.split(',').forEach(part => {
-                const match = part.trim().match(/^([\d.]+)\s+(\w+)/);
+                const match = part.trim().match(/^([\d.]+)\s+([\w/]+)$/);
                 if (match) memory[match[2]] = parseFloat(match[1]);
             });
         }
