@@ -23,8 +23,31 @@ app.get('/top', (req, res) => {
             });
         }
 
+        // Parse processes.
+        const processes = [];
+
+        // Loop through lines to find the process information.
+        for (let i = 0; i < lines.length; i++) {
+            // Each process line starts with the PID, which is a number, but may
+            // be preceded by whitespace. Match for that here.
+            if (lines[i].match(/^\s+([\d.]+)/)) {
+                // This line contains process information.
+                const parts = lines[i].trim().split(/\s+/);
+                const processInfo = {
+                    pid: parseInt(parts[0], 10),
+                    user: parts[1],
+                    cpu: parseFloat(parts[8]),
+                    mem: parseFloat(parts[9]),
+                    time: parts[10],
+                    command: parts.slice(11).join(' ')
+                }
+
+                processes.push(processInfo);
+            }
+        }
+
         // Render JSON response.
-        res.json({ memory });
+        res.json({ memory, processes });
     });
 });
 
