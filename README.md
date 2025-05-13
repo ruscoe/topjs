@@ -28,3 +28,23 @@ npm install
 `http://localhost:3000/top`
 
 Provides memory usage and running processes from the `top` command as JSON.
+
+```
+{
+  "memory": {
+    "free": 3975.8,
+    "used": 5719,
+    "buff/cache": 22247.7
+  },
+  "processes": [
+    {
+      "pid": 291264,
+      "user": "ruscoe",
+      "cpu": 36.8,
+      "mem": 1.6,
+      "time": "0:30.72",
+      "command": "brave"
+    }
+  ]
+}
+```
