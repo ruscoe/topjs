@@ -21,6 +21,10 @@ npm install
 
 `npm start`
 
+## Frontend
+
+There is a [React frontend you can use with TopJS](https://github.com/ruscoe/topjs-fe).
+
 ## Endpoints
 
 ### /top
