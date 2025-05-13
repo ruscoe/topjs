@@ -2,7 +2,8 @@ const express = require('express');
 const { exec } = require('child_process');
 
 const app = express();
-const port = 3000;
+// Run on port 3001 so React can run on 3000.
+const port = 3001;
 
 app.get('/top', (req, res) => {
     // Run the 'top' command a single time and parse the output.

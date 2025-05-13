@@ -25,7 +25,7 @@ npm install
 
 ### /top
 
-`http://localhost:3000/top`
+`http://localhost:3001/top`
 
 Provides memory usage and running processes from the `top` command as JSON.
 
